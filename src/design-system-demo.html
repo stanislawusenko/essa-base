@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System Demo</title>
+    <link href="dist/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-default text-main py-24 font-sans antialiased">
+    <div class="mx-auto max-w-4xl space-y-16">
+      <h1 class="text-primary mb-4 text-4xl font-bold">Design System ESSA Base v1.0</h1>
+
+      <section>
+        <h2 class="text-primary mt-8 mb-8 text-3xl font-bold">Color Palette</h2>
+
+        <div class="space-y-12">
+          <div>
+            <h3 class="text-main mb-4 font-medium opacity-70">Brand Colors</h3>
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div class="bg-primary rounded-lg p-6 text-center font-medium text-white">
+                Primary
+              </div>
+              <div class="bg-secondary rounded-lg p-6 text-center font-medium text-white">
+                Secondary
+              </div>
+              <div class="bg-accent rounded-lg p-6 text-center font-medium text-white">Accent</div>
+              <div
+                class="bg-highlight border-border-subtle text-main rounded-lg border p-6 text-center font-medium"
+              >
+                Highlight
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-main mb-4 font-medium opacity-70">Functional States</h3>
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div class="bg-success rounded-lg p-4 text-center font-medium text-white">
+                Success
+              </div>
+              <div class="bg-info rounded-lg p-4 text-center font-medium text-white">Info</div>
+              <div class="bg-warning rounded-lg p-4 text-center font-medium text-white">
+                Warning
+              </div>
+              <div class="bg-danger rounded-lg p-4 text-center font-medium text-white">Danger</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div>
+              <h3 class="text-main mb-4 font-medium opacity-70">Surface Layers</h3>
+              <div class="space-y-2">
+                <div class="bg-default border-border-subtle rounded-lg border p-6">Default</div>
+                <div class="bg-surface border-border-subtle rounded-lg border p-6">Surface</div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-main mb-4 font-medium opacity-70">Border Colors</h3>
+              <div class="flex flex-col gap-2">
+                <div class="border-border-subtle rounded-lg border border-2 p-4 p-6">Subtle</div>
+                <div class="border-border-main rounded-lg border border-2 p-4 p-6">Main</div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-main mb-4 font-medium opacity-70">Dark Context</h3>
+              <div class="bg-default border-border-subtle space-y-4 rounded-lg p-6 scheme-dark">
+                <p class="text-main font-bold">Dark Mode</p>
+                <p class="text-muted text-sm">
+                  Automatic content color inversion applied via the
+                  <code>scheme-dark</code>
+                  class.
+                </p>
+                <div class="flex gap-2">
+                  <div
+                    class="border-border-subtle text-main flex-1 rounded-lg border-2 p-2 text-center text-xs"
+                  >
+                    Subtle
+                  </div>
+                  <div
+                    class="border-border-main text-main flex-1 rounded-lg border-2 p-2 text-center text-xs"
+                  >
+                    Main
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-primary mt-8 mb-8 text-3xl font-bold">Typography</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h1 class="text-main text-4xl font-bold">Heading 1 (4xl)</h1>
+            <p class="text-muted mt-1 text-sm">Used for primary page titles and hero sections.</p>
+          </div>
+
+          <div>
+            <h2 class="text-main text-2xl font-semibold">Heading 2 (2xl)</h2>
+            <p class="text-muted mt-1 text-sm">
+              Used for major section headers to establish hierarchy.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-main text-xl font-semibold">Heading 3 (xl)</h3>
+            <p class="text-muted mt-1 text-sm">
+              Used for sub-headings within sections or card titles.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-main text-lg">Large Text (lg)</p>
+            <p class="text-muted mt-1 text-sm">Used for lead paragraphs or introductory text.</p>
+          </div>
+
+          <div>
+            <p class="text-main text-base">Body Text (base)</p>
+            <p class="text-muted mt-1 text-sm">
+              The standard font size for general content and paragraphs.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-main text-sm">Small Text (sm)</p>
+            <p class="text-muted mt-1 text-sm">
+              Used for helper text, input labels, and secondary information.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-main text-xs">Micro Text (xs)</p>
+            <p class="text-muted mt-1 text-sm">
+              Used for status badges, small captions, and footers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-8">
+        <h2 class="text-primary mt-8 text-3xl font-bold">Layout & Geometry</h2>
+
+        <div class="border-border-main border border-dashed p-4">
+          <h3 class="text-main mb-2 font-bold">Container (max-width: 80rem)</h3>
+          <div class="bg-surface text-muted rounded-md p-4 text-sm italic">
+            Content width constraint.
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="space-y-4">
+            <h3 class="text-main font-bold">Spacing Scale</h3>
+            <div class="bg-surface flex items-end gap-2 overflow-x-auto rounded-lg p-4">
+              <div class="flex flex-col items-center gap-1">
+                <div class="bg-primary h-8 w-[0.25rem]"></div>
+                <span class="text-muted text-[10px]">XS</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="bg-primary h-8 w-[0.5rem]"></div>
+                <span class="text-muted text-[10px]">SM</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="bg-primary h-8 w-[1rem]"></div>
+                <span class="text-muted text-[10px]">MD</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="bg-primary h-8 w-[1.5rem]"></div>
+                <span class="text-muted text-[10px]">LG</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="bg-primary h-8 w-[2.5rem]"></div>
+                <span class="text-muted text-[10px]">XL</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <div class="bg-primary h-8 w-[4rem]"></div>
+                <span class="text-muted text-[10px]">2XL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-main font-bold">Corner Radius</h3>
+            <div class="flex gap-4">
+              <div class="bg-surface border-border-subtle rounded-sm border p-4">SM</div>
+              <div class="bg-surface border-border-subtle rounded-md border p-4">MD</div>
+              <div class="bg-surface border-border-subtle rounded-lg border p-4">LG</div>
+              <div class="bg-surface border-border-subtle rounded-xl border p-4">XL</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-primary mt-12 mb-8 text-3xl font-bold">Elevation (Shadows)</h2>
+        <p class="text-muted mb-8 text-base">
+          Use these tokens to establish visual hierarchy and depth across the interface.
+        </p>
+
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div
+            class="bg-default border-border-subtle flex flex-col items-center justify-center rounded-lg border p-8 shadow-sm"
+          >
+            <span class="text-main font-semibold">shadow-sm</span>
+            <span class="text-muted mt-1 text-xs">Small items</span>
+          </div>
+
+          <div
+            class="bg-default border-border-subtle flex flex-col items-center justify-center rounded-lg border p-8 shadow-md"
+          >
+            <span class="text-main font-semibold">shadow-md</span>
+            <span class="text-muted mt-1 text-xs">Cards</span>
+          </div>
+
+          <div
+            class="bg-default border-border-subtle flex flex-col items-center justify-center rounded-lg border p-8 shadow-lg"
+          >
+            <span class="text-main font-semibold">shadow-lg</span>
+            <span class="text-muted mt-1 text-xs">Popovers</span>
+          </div>
+
+          <div
+            class="bg-default border-border-subtle flex flex-col items-center justify-center rounded-lg border p-8 shadow-xl"
+          >
+            <span class="text-main font-semibold">shadow-xl</span>
+            <span class="text-muted mt-1 text-xs">Modals</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-primary mt-12 mb-8 text-3xl font-bold">Motion & Interaction</h2>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="space-y-4">
+            <h3 class="text-main font-bold">Fast (150ms)</h3>
+            <div
+              class="bg-surface border-accent hover:bg-accent duration-fast ease-default cursor-pointer rounded-lg border-2 p-6 text-center font-semibold transition-colors"
+            >
+              Trigger
+            </div>
+            <p class="text-muted text-sm italic">
+              Used for high-frequency interactions (hover, toggle) to maintain a snappy, responsive
+              feel.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-main font-bold">Normal (300ms)</h3>
+            <div
+              class="bg-surface border-border-main hover:border-primary duration-normal ease-default cursor-pointer rounded-lg border-2 p-6 text-center font-semibold transition-all"
+            >
+              Expand
+            </div>
+            <p class="text-muted text-sm italic">
+              Standard duration for structural changes, such as card states or dropdown visibility.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-main font-bold">Slow (500ms)</h3>
+            <div
+              class="bg-surface border-border-main hover:border-danger duration-slow ease-default cursor-pointer rounded-lg border-2 p-6 text-center font-semibold transition-all"
+            >
+              Modal
+            </div>
+            <p class="text-muted text-sm italic">
+              Reserved for significant layout changes, like modal entrances or full-page overlays.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+/**
+ * WordPress Admin Bar: Layout stability fixes
+ */
+@layer components {
+  #wpadminbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Sticky Header: Offset logic for logged-in WordPress users */
+  body.admin-bar header {
+    position: sticky;
+    top: 32px;
+    z-index: 99998;
+    transform: translateZ(0);
+  }
+
+  /* Mobile Admin Bar adjustments */
+  @media screen and (max-width: 782px) {
+    body.admin-bar header {
+      top: 46px;
+    }
+
+    #wpadminbar {
+      transform: none !important;
+    }
+  }
+
+  /* Sticky Header: Default behavior for regular users */
+  body:not(.admin-bar) header {
+    position: sticky;
+    top: 0;
+    z-index: 99998;
+    transform: translateZ(0);
+  }
+}

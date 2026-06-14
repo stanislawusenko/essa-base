@@ -1,0 +1,59 @@
+<header>
+  <nav x-data="{ open: false }" class="bg-primary sticky top-0 z-50 px-6 py-4 text-white shadow-md">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-lg font-bold">ESSA Base</a>
+
+      <ul class="hidden space-x-6 md:flex">
+        <li><a href="/" class="hover:text-accent transition-colors duration-200">Home</a></li>
+        <li>
+          <a href="#example" class="hover:text-accent transition-colors duration-200">Example</a>
+        </li>
+      </ul>
+
+      <button
+        type="button"
+        class="md:hidden"
+        @click="open = !open"
+        aria-label="Toggle navigation"
+        x-bind:aria-expanded="open"
+        aria-controls="mobile-menu"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            x-show="!open"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+          <path
+            x-show="open"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <ul id="mobile-menu" x-show="open" x-cloak x-transition class="mt-4 space-y-4 md:hidden">
+      <li><a href="/" class="hover:text-accent block transition-colors duration-200">Home</a></li>
+      <li>
+        <a href="#example" class="hover:text-accent block transition-colors duration-200">
+          Example
+        </a>
+      </li>
+      <li>
+        <a href="#example" class="hover:text-accent block transition-colors duration-200">
+          Example
+        </a>
+      </li>
+      <li>
+        <a href="#example" class="hover:text-accent block transition-colors duration-200">
+          Example
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

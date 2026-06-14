@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Starter – Default HTML template with Sticky Footer</title>
+  </head>
+  <body class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-white font-sans text-neutral-900">
+    {{> header }}
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA
+         ========================================================================== -->
+    <!--
+      NOTE: <main> is required for sticky footer layout.
+      Grid rows: [header auto] [content 1fr] [footer auto].
+      Without <main>, the middle row (1fr) won't stretch and footer won't stick.
+    -->
+    <main>
+      <!-- ======================================================================
+           HERO SECTION
+           ====================================================================== -->
+      <section class="bg-linear-to-b from-white to-blue-50 px-6 py-20">
+        <div class="mx-auto max-w-4xl text-center">
+          <h1 class="text-primary mb-5 text-5xl font-extrabold tracking-tight drop-shadow-md">
+            Build with Quality, Start with Speed
+          </h1>
+          <p class="mx-auto mb-10 max-w-xl text-xl leading-relaxed text-neutral-700">
+            A refined multi-page boilerplate engineered for rapid development and clean
+            architecture.
+          </p>
+
+          <!-- Technology Stack Icons -->
+          <div class="flex items-end justify-center gap-8 sm:gap-12">
+            <!-- Vite Link -->
+            <a
+              href="https://vitejs.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col items-center gap-3"
+            >
+              <div class="flex h-12 items-center justify-center">
+                <img
+                  src="https://vitejs.dev/logo.svg"
+                  alt="Vite"
+                  class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <span
+                class="group-hover:text-primary text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors"
+              >
+                Vite 6
+              </span>
+            </a>
+
+            <!-- Tailwind Link -->
+            <a
+              href="https://tailwindcss.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col items-center gap-3"
+            >
+              <div class="flex h-12 items-center justify-center">
+                <img
+                  src="https://tailwindcss.com/favicons/favicon-32x32.png?v=3"
+                  alt="Tailwind"
+                  class="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <span
+                class="group-hover:text-primary text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors"
+              >
+                Tailwind 4
+              </span>
+            </a>
+
+            <!-- Alpine Link -->
+            <a
+              href="https://alpinejs.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col items-center gap-3"
+            >
+              <div class="flex h-12 items-center justify-center">
+                <img
+                  src="https://alpinejs.dev/favicon.png"
+                  alt="AlpineJS"
+                  class="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <span
+                class="group-hover:text-primary text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors"
+              >
+                Alpine.js
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           FEATURES SECTION
+           ====================================================================== -->
+      <section class="px-8 py-14">
+        <div class="prose mx-auto max-w-6xl">
+          <h2
+            class="border-accent text-primary mb-6 inline-block border-b-2 pb-2 text-3xl font-semibold"
+          >
+            Core Features
+          </h2>
+          <p class="leading-relaxed text-neutral-700">
+            A production-ready foundation featuring a sticky layout, responsive navigation and
+            Alpine.js interactivity — designed to be completely customizable.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    {{> footer }}
+  </body>
+</html>

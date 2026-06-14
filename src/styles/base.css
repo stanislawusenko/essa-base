@@ -1,0 +1,189 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   THEME CONFIGURATION
+   ========================================================================== */
+
+@theme {
+  /* ------------------------------------------------------------------------ */
+  /* Color palette                                                            */
+  /* ------------------------------------------------------------------------ */
+
+  /* Brand Identity: Core values of the company's visual language */
+  --color-primary: #001f3f;
+  --color-secondary: #334155;
+  --color-accent: #f68d1e;
+  --color-highlight: #fef08a;
+
+  /* UI & Surface: Semantic tokens for spatial hierarchy and base readability */
+  --color-default: #ffffff;
+  --color-surface: #f1f5f9;
+  --color-main: #0f172a;
+  --color-muted: #64748b;
+
+  /* Inverse/Dark Mode UI: Semantic overrides for dark contexts */
+  --color-inverse-default: var(--color-primary);
+  --color-inverse-surface: #1e293b;
+  --color-inverse-main: #ffffff;
+  --color-inverse-muted: #94a3b8;
+
+  /* Functional States: Feedback, validation, and alert system */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-info: #0284c7;
+
+  /* Inverse Functional States: High-contrast variants for dark modes */
+  --color-inverse-success: #4ade80;
+  --color-inverse-warning: #fbbf24;
+  --color-inverse-danger: #f87171;
+  --color-inverse-info: #38bdf8;
+
+  /* Border System: Tokenized border weights and visibility levels */
+  --color-border-subtle: #e2e8f0;
+  --color-border-main: #94a3b8;
+
+  /* Inverse Border System: Semantic overrides for dark contexts */
+  --color-inverse-border-subtle: #1a3d60;
+  --color-inverse-border-main: #3b7dbd;
+
+  /* ------------------------------------------------------------------------ */
+  /* Typography: Global font definitions and modular scale tokens             */
+  /* ------------------------------------------------------------------------ */
+
+  /* Font Family definitions */
+  --font-sans: 'Inter', 'ui-sans-serif', 'system-ui', sans-serif;
+
+  /* Font Weight definitions for consistent visual hierarchy */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Scalable Type System (Modular Scale) */
+  --text-xs: 0.75rem; /* 12px - Micro-text for badges and subtle captions */
+  --text-sm: 0.875rem; /* 14px - Auxiliary text for inputs and helper descriptions */
+  --text-base: 1rem; /* 16px - Base unit for standard body copy */
+  --text-lg: 1.125rem; /* 18px - Prominent text for emphasis and introductory lines */
+  --text-xl: 1.25rem; /* 20px - Heading level for component labels and sub-cards */
+  --text-2xl: 1.5rem; /* 24px - Section heading for clear content hierarchy */
+  --text-4xl: 2.25rem; /* 36px - Primary display heading for hero sections */
+
+  /* Leading (Line Height) */
+  --text-base-leading: 1.5; /* 24px - Standard line-height for optimal readability */
+
+  /* ------------------------------------------------------------------------ */
+  /* Layout: Semantic container and spacing scales constraints                */
+  /* ------------------------------------------------------------------------ */
+  --container-max-width: 80rem; /* 1280px central constraint */
+
+  --spacing-xs: 0.25rem; /* 4px - Micro-spacing */
+  --spacing-sm: 0.5rem; /* 8px - Tight padding */
+  --spacing-md: 1rem; /* 16px - Base unit */
+  --spacing-lg: 1.5rem; /* 24px - Component gutters */
+  --spacing-xl: 2.5rem; /* 40px - Section separation */
+  --spacing-2xl: 4rem; /* 64px - Hero blocks */
+
+  /* ------------------------------------------------------------------------ */
+  /* Geometry: Border radius and shape tokens                                 */
+  /* ------------------------------------------------------------------------ */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* ------------------------------------------------------------------------ */
+  /* Elevation: Shadow tokens for visual hierarchy and depth                  */
+  /* ------------------------------------------------------------------------ */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ------------------------------------------------------------------------ */
+  /* Motion Tokens: Standardized timing for consistent interaction feel       */
+  /* ------------------------------------------------------------------------ */
+
+  /* 150ms: Micro-interactions (hover, focus, toggle) */
+  --transition-duration-fast: 150ms;
+
+  /* 300ms: Standard interactions (cards, dropdowns, basic transitions) */
+  --transition-duration-normal: 300ms;
+
+  /* 500ms: Structural changes (modals, drawers, layout shifts) */
+  --transition-duration-slow: 500ms;
+
+  /* Default easing for natural motion */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   PLUGINS
+   ========================================================================== */
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/aspect-ratio';
+@plugin '@tailwindcss/container-queries';
+
+/* ==========================================================================
+   BASE LAYER: Global HTML element resets and defaults
+   ========================================================================== */
+
+@layer base {
+  html {
+    /* Ensures smooth scrolling and anchor offset for sticky headers */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-default text-main selection:bg-accent/20 font-sans antialiased;
+  }
+
+  /* Standardize link behavior */
+  a {
+    @apply duration-normal ease-default transition-colors;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS LAYER: Reusable UI elements
+   ========================================================================== */
+
+@layer components {
+  /* --------------------------------------------------------------------------- */
+  /* Theme Inversion: Maps tokens to inverted values for dark-themed containers  */
+  /* --------------------------------------------------------------------------- */
+  .scheme-dark {
+    /* Base UI Tokens */
+    --color-default: var(--color-inverse-default);
+    --color-surface: var(--color-inverse-surface);
+    --color-main: var(--color-inverse-main);
+    --color-muted: var(--color-inverse-muted);
+
+    /* Functional States */
+    --color-success: var(--color-inverse-success);
+    --color-warning: var(--color-inverse-warning);
+    --color-danger: var(--color-inverse-danger);
+    --color-info: var(--color-inverse-info);
+
+    /* Border Tokens */
+    --color-border-subtle: var(--color-inverse-border-subtle);
+    --color-border-main: var(--color-inverse-border-main);
+  }
+
+  /* ------------------------------------------------------------------------ */
+  /* Navigation Components: Shared styles for primary link elements           */
+  /* ------------------------------------------------------------------------ */
+
+  /* Base link style with hover transition effects */
+  .nav-link {
+    @apply hover:text-accent duration-normal transition-colors;
+  }
+
+  /* Explicit state for the currently active route */
+  .nav-link-active {
+    @apply text-accent font-semibold;
+  }
+}
