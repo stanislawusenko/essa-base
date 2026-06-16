@@ -155,7 +155,6 @@ export default function generateMenuPlugin(options: PluginOptions = {}): Plugin 
         </div>
         <div class="footer">
           ESSA Base &copy; ${currentYear} | Distributed under MIT License<br>
-          <a href="#">Documentation</a>
         </div>
       </body>
     </html>`

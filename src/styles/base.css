@@ -60,29 +60,43 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Scalable Type System (Modular Scale) */
-  --text-xs: 0.75rem; /* 12px - Micro-text for badges and subtle captions */
-  --text-sm: 0.875rem; /* 14px - Auxiliary text for inputs and helper descriptions */
-  --text-base: 1rem; /* 16px - Base unit for standard body copy */
-  --text-lg: 1.125rem; /* 18px - Prominent text for emphasis and introductory lines */
-  --text-xl: 1.25rem; /* 20px - Heading level for component labels and sub-cards */
-  --text-2xl: 1.5rem; /* 24px - Section heading for clear content hierarchy */
-  --text-4xl: 2.25rem; /* 36px - Primary display heading for hero sections */
+  /* Font sizes (Modular Scale) */
+  --text-xs: 0.75rem; /* Micro-text for badges and subtle captions */
+  --text-sm: 0.875rem; /* Auxiliary text for inputs and helper descriptions */
+  --text-base: 1rem; /* Base unit for standard body copy */
+  --text-lg: 1.125rem; /* Prominent text for emphasis and introductory lines */
+  --text-xl: 1.25rem; /* Heading level for component labels and sub-cards */
+  --text-2xl: 1.5rem; /* Section heading for clear content hierarchy */
+  --text-4xl: 2.25rem; /* Primary display heading for hero sections */
 
-  /* Leading (Line Height) */
-  --text-base-leading: 1.5; /* 24px - Standard line-height for optimal readability */
+  /* Line Height (Leading): Global reading rhythm scale */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter spacing for visual hierarchy */
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.02em;
 
   /* ------------------------------------------------------------------------ */
   /* Layout: Semantic container and spacing scales constraints                */
   /* ------------------------------------------------------------------------ */
-  --container-max-width: 80rem; /* 1280px central constraint */
 
-  --spacing-xs: 0.25rem; /* 4px - Micro-spacing */
-  --spacing-sm: 0.5rem; /* 8px - Tight padding */
-  --spacing-md: 1rem; /* 16px - Base unit */
-  --spacing-lg: 1.5rem; /* 24px - Component gutters */
-  --spacing-xl: 2.5rem; /* 40px - Section separation */
-  --spacing-2xl: 4rem; /* 64px - Hero blocks */
+  /* Central content constraint: 1280px */
+  --container-max-width: 80rem;
+  --container-padding: 1rem;
+
+  /* Fluid Spacing */
+  --spacing-section: clamp(4rem, 10vw, 8rem); /* Vertical rhythm between sections */
+  --spacing-edge: clamp(1rem, 5vw, 2rem); /* Screen boundary safe zones */
+  --spacing-gutter: 1.5rem; /* Fixed internal grid spacing */
+
+  /* Text readability constraint */
+  --max-width-content: 65ch;
+  --max-width-copy: 45ch;
 
   /* ------------------------------------------------------------------------ */
   /* Geometry: Border radius and shape tokens                                 */
