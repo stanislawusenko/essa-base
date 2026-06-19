@@ -120,7 +120,8 @@ src/
 ├── public/                   # Static files (favicons, robots.txt, etc.)
 │
 ├── scripts/
-│   └── main.ts               # JS entry point (Alpine.js + web fonts initialization)
+│   ├── alpine-components.ts  # Alpine.js core component declarations and module definitions
+│   └── main.ts               # Main JavaScript entry point
 │
 ├── styles/
 │   ├── base.css              # Tailwind CSS core setup & theme configuration
