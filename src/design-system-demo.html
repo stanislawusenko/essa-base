@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design System Demo</title>
-    <link href="dist/styles.css" rel="stylesheet" />
+    <title>Design System Demo — ESSA Base</title>
+    <link href="/styles/base.css" rel="stylesheet" />
   </head>
   <body class="bg-default text-main py-24 font-sans antialiased">
     <div class="mx-auto max-w-4xl space-y-16">
@@ -58,14 +58,16 @@
             <div>
               <h3 class="text-main mb-4 font-medium opacity-70">Border Colors</h3>
               <div class="flex flex-col gap-2">
-                <div class="border-border-subtle rounded-lg border border-2 p-4 p-6">Subtle</div>
-                <div class="border-border-main rounded-lg border border-2 p-4 p-6">Main</div>
+                <div class="border-border-subtle rounded-lg border-2 p-6">Subtle</div>
+                <div class="border-border-main rounded-lg border-2 p-6">Main</div>
               </div>
             </div>
 
             <div>
               <h3 class="text-main mb-4 font-medium opacity-70">Dark Context</h3>
-              <div class="bg-default border-border-subtle space-y-4 rounded-lg p-6 scheme-dark">
+              <div
+                class="bg-default border-border-subtle space-y-4 rounded-lg border p-6 scheme-dark"
+              >
                 <p class="text-main font-bold">Dark Mode</p>
                 <p class="text-muted text-sm">
                   Automatic content color inversion applied via the
@@ -152,36 +154,6 @@
         </div>
 
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div class="space-y-4">
-            <h3 class="text-main font-bold">Spacing Scale</h3>
-            <div class="bg-surface flex items-end gap-2 overflow-x-auto rounded-lg p-4">
-              <div class="flex flex-col items-center gap-1">
-                <div class="bg-primary h-8 w-[0.25rem]"></div>
-                <span class="text-muted text-[10px]">XS</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="bg-primary h-8 w-[0.5rem]"></div>
-                <span class="text-muted text-[10px]">SM</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="bg-primary h-8 w-[1rem]"></div>
-                <span class="text-muted text-[10px]">MD</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="bg-primary h-8 w-[1.5rem]"></div>
-                <span class="text-muted text-[10px]">LG</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="bg-primary h-8 w-[2.5rem]"></div>
-                <span class="text-muted text-[10px]">XL</span>
-              </div>
-              <div class="flex flex-col items-center gap-1">
-                <div class="bg-primary h-8 w-[4rem]"></div>
-                <span class="text-muted text-[10px]">2XL</span>
-              </div>
-            </div>
-          </div>
-
           <div class="space-y-4">
             <h3 class="text-main font-bold">Corner Radius</h3>
             <div class="flex gap-4">

@@ -1,7 +1,11 @@
 /**
- * WordPress Admin Bar: Layout stability fixes
+ * @file wordpress.css
+ * @description WordPress Admin Bar integration layer. Prevents fixed layout collision and fixes sticky headers offset.
+ * @version 1.0.0
  */
+
 @layer components {
+  /* WordPress Admin Bar core reset */
   #wpadminbar {
     position: fixed !important;
     top: 0;
@@ -12,7 +16,7 @@
     backface-visibility: hidden;
   }
 
-  /* Sticky Header: Offset logic for logged-in WordPress users */
+  /* Sticky Header: Offset for logged-in users (Desktop) */
   body.admin-bar header {
     position: sticky;
     top: 32px;
@@ -20,7 +24,15 @@
     transform: translateZ(0);
   }
 
-  /* Mobile Admin Bar adjustments */
+  /* Sticky Header: Default behavior (Regular users) */
+  body:not(.admin-bar) header {
+    position: sticky;
+    top: 0;
+    z-index: 99998;
+    transform: translateZ(0);
+  }
+
+  /* Responsive adjustments for mobile admin bar height */
   @media screen and (max-width: 782px) {
     body.admin-bar header {
       top: 46px;
@@ -29,13 +41,5 @@
     #wpadminbar {
       transform: none !important;
     }
-  }
-
-  /* Sticky Header: Default behavior for regular users */
-  body:not(.admin-bar) header {
-    position: sticky;
-    top: 0;
-    z-index: 99998;
-    transform: translateZ(0);
   }
 }
