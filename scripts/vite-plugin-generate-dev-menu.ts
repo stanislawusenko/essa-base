@@ -5,7 +5,7 @@ import type { Plugin, ViteDevServer } from 'vite'
 /**
  * @file vite-plugin-generate-dev-menu.ts
  * @description Automatically generates a clean, light-themed navigation page for ESSA Base HTML templates.
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 /* ==========================================================================
@@ -53,15 +53,19 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
     const results: MenuNode[] = []
     if (!fs.existsSync(dir)) return results
 
-    const items = fs
-      .readdirSync(dir, { withFileTypes: true })
-      .sort((a, b) =>
-        a.isDirectory() === b.isDirectory()
-          ? a.name.localeCompare(b.name)
-          : a.isDirectory()
-            ? -1
-            : 1,
-      )
+    const items = fs.readdirSync(dir, { withFileTypes: true })
+
+    // Custom sorting: Directories first, then files (with index.html hardcoded to the top)
+    items.sort((a, b) => {
+      if (a.isDirectory() !== b.isDirectory()) {
+        return a.isDirectory() ? -1 : 1
+      }
+      if (a.isFile() && b.isFile()) {
+        if (a.name === 'index.html') return -1
+        if (b.name === 'index.html') return 1
+      }
+      return a.name.localeCompare(b.name)
+    })
 
     for (const item of items) {
       if (item.name.startsWith('.') || item.name === 'dev-menu.html') continue
