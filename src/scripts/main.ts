@@ -1,43 +1,28 @@
-/**
- * Main application entry point.
- * Orchestrates global style injection, third-party libraries, and core lifecycle initialization.
- */
+import Alpine from 'alpinejs'
+import { registerComponents } from './alpine-components'
 
-/* ==========================================================================
-   STYLE ARCHITECTURE
-   ========================================================================== */
-
-// Preloading critical font assets to ensure layout stability.
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/700.css'
-
-// Base styles
 import '../styles/base.css'
 // Note: wordpress.css is kept commented as a feature toggle for integration layers.
 // import '../styles/wordpress.css'
+
+/**
+ * @file main.ts
+ * @description Primary entry point for ESSA Base. Handles style orchestration and Alpine.js core initialization.
+ * @version 1.0.0
+ */
 
 /* ==========================================================================
    CORE FRAMEWORK & REGISTRATION
    ========================================================================== */
 
-import Alpine from 'alpinejs'
-import { registerComponents } from './alpine-components'
-
-/**
- * Component registration.
- * Modular components must be registered with the Alpine instance
- * before the reactive engine is started.
- */
 registerComponents(Alpine)
 
-/**
- * Global exposure.
- * Attaches Alpine to the window object for browser-level accessibility.
- */
 window.Alpine = Alpine
 
 /* ==========================================================================
-   INITIALIZATION ENGINE
+   INITIALIZATION ALPINE
    ========================================================================== */
 
 function startAlpine(): void {
@@ -52,7 +37,6 @@ function startAlpine(): void {
   }
 }
 
-// Lifecycle: Bind execution to the DOMContentLoaded event.
 document.addEventListener('DOMContentLoaded', startAlpine)
 
 /* ==========================================================================

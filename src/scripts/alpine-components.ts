@@ -1,18 +1,13 @@
-/**
- * Alpine.js Component Registry
- * Centralized hub for registering reusable interactive components and plugins.
- */
-
 import Alpine from 'alpinejs'
 
 /**
- * Registers global Alpine.js components.
- * * @param {typeof Alpine} AlpineInstance - The Alpine.js instance to register components with.
+ * @file alpine-components.ts
+ * @description Centralized hub for registering reusable interactive Alpine.js components.
+ * @version 1.0.0
  */
+
 export function registerComponents(AlpineInstance: typeof Alpine): void {
-  /* ------------------------------------------------------------------------
-     COMPONENT: DROPDOWN
-     ------------------------------------------------------------------------ */
+  // Component: Dropdown
   AlpineInstance.data('dropdown', () => ({
     open: false,
 
@@ -20,9 +15,4 @@ export function registerComponents(AlpineInstance: typeof Alpine): void {
       this.open = !this.open
     },
   }))
-
-  /* ------------------------------------------------------------------------
-     COMPONENT: MODAL (Template)
-     ------------------------------------------------------------------------ */
-  // AlpineInstance.data('modal', () => ({ ... }))
 }
