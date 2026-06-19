@@ -3,24 +3,29 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
-
 import handlebars from 'vite-plugin-handlebars'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+
 import autoMainPlugin from './scripts/vite-plugin-auto-main.ts'
 import generateMenuPlugin from './scripts/vite-plugin-generate-dev-menu.ts'
 
-/* ==========================================================================
-   UTILITY: HTML ENTRY POINT DISCOVERY
-   ========================================================================== */
+/**
+ * @file vite.config.js
+ * @description Master build configuration for ESSA Base (TailwindCSS ecosystem).
+ * @version 1.0.0
+ */
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const srcDir = path.resolve(__dirname, 'src')
 
+/* ==========================================================================
+   UTILITY: HTML ENTRY POINT DISCOVERY
+   ========================================================================== */
+
 /**
  * Recursively scans the source directory for HTML entry points.
- * Partials and specific asset directories are excluded to maintain
- * a clean build graph.
+ * Partials and specific asset directories are excluded to maintain a clean build graph.
  */
 function getHtmlFiles(dir, relativePath = '') {
   let results = []
@@ -32,7 +37,6 @@ function getHtmlFiles(dir, relativePath = '') {
     const relPath = path.join(relativePath, item.name)
 
     if (item.isDirectory()) {
-      // Exclude asset and partial directories from serving as entry pages
       if (!['css', 'js', 'partials', 'img', 'assets'].includes(item.name)) {
         results = results.concat(getHtmlFiles(fullPath, relPath))
       }
@@ -92,7 +96,6 @@ export default defineConfig({
       includePublic: true,
       logStats: true,
       ansiColors: true,
-      // Image compression configuration
       jpeg: { quality: 80, mozjpeg: true },
       png: { quality: 80, palette: true },
       webp: { lossless: false, quality: 80 },
@@ -110,7 +113,6 @@ export default defineConfig({
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
-        // Centralized asset categorization strategy
         assetFileNames: (assetInfo) => {
           const name = assetInfo.name || ''
           const ext = path.extname(name)

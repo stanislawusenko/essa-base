@@ -28,7 +28,7 @@ This template provides a clean, professional foundation for rapid multi-page dev
 1. **Clone the repository:**
 
 ```bash
-   git clone [https://github.com/stanislawusenko/essa-base.git](https://github.com/stanislawusenko/essa-base.git)
+   git clone https://github.com/stanislawusenko/essa-base.git
    cd essa-base
 ```
 

@@ -4,10 +4,16 @@ import prettierConfig from 'eslint-config-prettier'
 import globals from 'globals'
 
 /**
- * ESLint Flat Configuration
+ * @file eslint.config.js
+ * @description Master linting configuration for ESSA Base.
+ * @version 1.0.0
  */
+
 export default tseslint.config(
-  // 1. Global Ignores (у tseslint.config це працює автоматично)
+  /* ==========================================================================
+     GLOBAL IGNORES
+     ========================================================================== */
+
   {
     ignores: [
       'dist/**',
@@ -21,12 +27,18 @@ export default tseslint.config(
     ],
   },
 
-  // 2. Base Configurations
+  /* ==========================================================================
+     BASE CONFIGURATIONS
+     ========================================================================== */
+
   js.configs.recommended,
   ...tseslint.configs.recommended,
   prettierConfig,
 
-  // 3. Custom Rules
+  /* ==========================================================================
+     CUSTOM RULES & ENVIRONMENT
+     ========================================================================== */
+
   {
     files: ['**/*.js', '**/*.ts'],
     languageOptions: {

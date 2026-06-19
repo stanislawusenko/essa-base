@@ -5,11 +5,13 @@
   "semi": false,
   "singleQuote": true,
   "quoteProps": "consistent",
+
   "trailingComma": "all",
   "bracketSpacing": true,
   "arrowParens": "always",
   "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "ignore",
+
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindAttributes": ["class", "className", "active-class", ".*Class"]
 }

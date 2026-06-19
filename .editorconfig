@@ -7,10 +7,28 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 indent_style = space
 indent_size = 2
+max_line_length = 100
 
-[*.{html,css,js,json,md,yml,yaml,svg,xml}]
+[*.{html,css,scss,js,jsx,ts,tsx,json,jsonc,md,yml,yaml,svg,xml}]
 indent_style = space
 indent_size = 2
 
+[*.{gitignore,gitattributes}]
+indent_style = space
+indent_size = 2
+
+[*.php]
+indent_style = space
+indent_size = 4
+
 [Makefile]
 indent_style = tab
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.sh]
+end_of_line = lf
+indent_style = space
+indent_size = 2

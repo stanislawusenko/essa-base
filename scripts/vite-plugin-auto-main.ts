@@ -1,15 +1,25 @@
-import { Plugin } from 'vite'
+import type { Plugin } from 'vite'
+
+/**
+ * @file vite-plugin-auto-main.ts
+ * @description Automatic main script injector plugin for ESSA Base (Tailwind ecosystem).
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   INTERFACES & TYPES
+   ========================================================================== */
 
 interface PluginOptions {
   scriptPath?: string
 }
 
-/**
- * Vite plugin to automatically inject the main entry script into HTML files.
- * This ensures consistency across all pages in the Multi-Page Application.
- */
+/* ==========================================================================
+   PLUGIN CORE
+   ========================================================================== */
+
 export default function autoMainPlugin(options: PluginOptions = {}): Plugin {
-  const scriptPath = options.scriptPath ?? '/src/scripts/main.ts'
+  const scriptPath = options.scriptPath ?? '/scripts/main.ts'
 
   return {
     name: 'vite-plugin-auto-main',
@@ -18,14 +28,25 @@ export default function autoMainPlugin(options: PluginOptions = {}): Plugin {
     transformIndexHtml: {
       order: 'pre',
       handler(html: string) {
-        // Prevent duplicate script injection
-        if (html.includes(scriptPath) || html.includes('main.ts')) {
+        const scriptPattern = new RegExp(`<script[^>]*src=["']${scriptPath}["']`, 'i')
+
+        if (scriptPattern.test(html)) {
           return html
         }
 
-        // Inject script module before the closing body tag
-        const scriptTag = `\n    <script type="module" src="${scriptPath}"></script>\n`
-        return html.replace(/<\/body>/i, `${scriptTag}</body>`)
+        return {
+          html,
+          tags: [
+            {
+              tag: 'script',
+              attrs: {
+                type: 'module',
+                src: scriptPath,
+              },
+              injectTo: 'body',
+            },
+          ],
+        }
       },
     },
   }
