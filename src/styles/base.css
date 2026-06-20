@@ -11,13 +11,14 @@
    ========================================================================== */
 
 @theme {
+  /* 1. BRAND & UI COLOR PALETTE */
   /* Brand Identity */
   --color-primary: #001f3f;
   --color-secondary: #334155;
   --color-accent: #f68d1e;
   --color-highlight: #fef08a;
 
-  /* UI & Surface */
+  /* UI & Surface (Light Scheme Default) */
   --color-default: #ffffff;
   --color-surface: #f1f5f9;
   --color-main: #0f172a;
@@ -49,7 +50,7 @@
   --color-inverse-border-subtle: #1a3d60;
   --color-inverse-border-main: #3b7dbd;
 
-  /* Typography */
+  /* 2. TYPOGRAPHY SYSTEM */
   --font-sans: 'Inter', 'ui-sans-serif', 'system-ui', sans-serif;
 
   --font-weight-normal: 400;
@@ -64,6 +65,10 @@
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
   --text-4xl: 2.25rem;
+  /* Fluid Core Headings (Optional mapping if needed in CSS) */
+  /* --text-h1: clamp(2.25rem, 1.8rem + 2.5vw, 3.5rem); */
+  /* --text-h2: clamp(1.5rem, 1.25rem + 1.2vw, 2rem); */
+  /* --text-h3: clamp(1.125rem, 0.8rem + 0.8vw, 1.375rem); */
 
   --leading-none: 1;
   --leading-tight: 1.25;
@@ -75,31 +80,32 @@
   --tracking-tight: -0.02em;
   --tracking-wide: 0.02em;
 
-  /* Layout Constraints */
-  --container-max-width: 80rem;
-  --container-padding: 1rem;
-
+  /* 3. LAYOUT & SPACING CONSTRAINTS */
   /* Fluid Spacing Scale */
   --spacing-section: clamp(4rem, 10vw, 8rem);
   --spacing-edge: clamp(1rem, 5vw, 2rem);
   --spacing-gutter: 1.5rem;
+  --spacing-stack: clamp(1.5rem, 4vw, 3rem);
 
+  /* Layout Width Limits */
+  --container-max-width: 80rem;
+  --container-padding: 1rem;
   --max-width-content: 65ch;
   --max-width-copy: 45ch;
 
-  /* Geometry & Radii */
+  /* 4. RADIUS */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 
-  /* Elevation Shadows */
+  /* 5. ELEVATION SHADOWS */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-  /* Motion & Timings */
+  /* 6. MOTION & TIMINGS */
   --transition-duration-fast: 150ms;
   --transition-duration-normal: 300ms;
   --transition-duration-slow: 500ms;
