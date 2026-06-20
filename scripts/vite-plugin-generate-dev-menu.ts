@@ -151,10 +151,8 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
       const html = generateHtml(getHtmlFiles(srcDir))
       fs.writeFileSync(outPath, html)
 
-      // Оновлено префікс під єдиний стандарт ESSA Base
       console.log(`\x1b[32m✅ [ESSA Base] Dev-menu synchronized: ${path.basename(outPath)}\x1b[0m`)
     } catch (err: any) {
-      // Оновлено префікс під єдиний стандарт ESSA Base
       console.error(`\x1b[31m❌ [ESSA Base] Dev-menu Sync Error: ${err.message}\x1b[0m`)
     }
   }
