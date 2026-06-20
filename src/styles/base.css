@@ -85,7 +85,6 @@
   --spacing-section: clamp(4rem, 10vw, 8rem);
   --spacing-edge: clamp(1rem, 5vw, 2rem);
   --spacing-gutter: 1.5rem;
-  --spacing-stack: clamp(1.5rem, 4vw, 3rem);
 
   /* Layout Width Limits */
   --container-max-width: 80rem;
