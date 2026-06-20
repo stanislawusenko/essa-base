@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 
 /**
- * @file base.css
- * @description Core stylesheet for ESSA Base featuring Tailwind CSS v4 design tokens and resets.
+ * @file design-tokens.css
+ * @description Global configuration layer for ESSA Base. Contains Tailwind CSS v4 design tokens,
+ * theme definitions, and essential framework plugins. No custom layout styles should be written here.
  * @version 1.0.0
  */
 
@@ -118,52 +119,3 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/aspect-ratio';
 @plugin '@tailwindcss/container-queries';
-
-/* ==========================================================================
-   BASE LAYER (RESETS & DEFAULT UTILITIES)
-   ========================================================================== */
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-  }
-
-  body {
-    @apply bg-default text-main selection:bg-accent/20 font-sans antialiased;
-  }
-
-  a {
-    @apply duration-normal ease-default transition-colors;
-  }
-}
-
-/* ==========================================================================
-   COMPONENTS LAYER (REUSABLE UI UTILITIES)
-   ========================================================================== */
-
-@layer components {
-  /* Manual Inversion Profile for Custom Dark Layout Containers */
-  .scheme-dark {
-    --color-default: var(--color-inverse-default);
-    --color-surface: var(--color-inverse-surface);
-    --color-main: var(--color-inverse-main);
-    --color-muted: var(--color-inverse-muted);
-
-    --color-success: var(--color-inverse-success);
-    --color-warning: var(--color-inverse-warning);
-    --color-danger: var(--color-inverse-danger);
-    --color-info: var(--color-inverse-info);
-
-    --color-border-subtle: var(--color-inverse-border-subtle);
-    --color-border-main: var(--color-inverse-border-main);
-  }
-
-  .nav-link {
-    @apply duration-normal hover:text-accent transition-colors;
-  }
-
-  .nav-link-active {
-    @apply text-accent font-semibold;
-  }
-}

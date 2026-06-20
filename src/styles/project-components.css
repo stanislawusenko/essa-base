@@ -1,0 +1,29 @@
+@import './design-tokens.css' reference;
+
+/**
+ * @file project-components.css
+ * @description Dedicated style playground for the final application.
+ * Use this file to write page-specific components, utility overrides, and custom vanilla CSS.
+ * @note Supports both Tailwind @apply directives and pure/custom CSS declarations.
+ */
+
+/* ==========================================================================
+   PROJECT-SPECIFIC COMPONENTS (TAILWIND UTILITIES & CUSTOM CSS)
+   ========================================================================== */
+
+@layer components {
+  /* 1. TAILWIND-BASED UTILITY COMPONENTS */
+  /* Site-specific navigation styles */
+  .nav-link {
+    @apply duration-normal hover:text-accent transition-colors;
+  }
+
+  .nav-link-active {
+    @apply text-accent font-semibold;
+  }
+
+  /* Example component: .hero-block { @apply bg-black text-default; } */
+
+  /* 2. PURE CUSTOM CSS (VANILLA CSS & OVERRIDES) */
+  /* Write your traditional CSS, animations, third-party overrides, or scrollbars here */
+}

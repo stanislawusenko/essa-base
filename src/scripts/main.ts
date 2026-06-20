@@ -5,7 +5,12 @@ import '@fontsource/manrope/400.css'
 import '@fontsource/manrope/600.css'
 import '@fontsource/manrope/700.css'
 import '@fontsource/manrope/800.css'
-import '../styles/design-tokens.css'
+
+// ESSA Base Style Architecture Layer Orchestration (Tailwind v4 Specification)
+import '../styles/design-tokens.css' // 1. Global design tokens & theme configurations
+import '../styles/core-components.css' // 2. Core element resets & system components
+import '../styles/project-components.css' // 3. Custom layout components & custom vanilla CSS
+
 // Note: wordpress.css is kept commented as a feature toggle for integration layers.
 // import '../styles/wordpress.css'
 

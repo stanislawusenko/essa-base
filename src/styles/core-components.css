@@ -1,0 +1,52 @@
+@import './design-tokens.css' reference;
+
+/**
+ * @file core-components.css
+ * @description Standard base resets and structural UI components for ESSA Base.
+ * This file acts as the core UI layer and handles framework-level styles out of the box.
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   BASE LAYER (GLOBAL RESETS & ELEMENT STYLES)
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-default text-main selection:bg-accent/20 font-sans antialiased;
+  }
+
+  a {
+    @apply duration-normal ease-default transition-colors;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS LAYER (REUSABLE SYSTEM UI CLASSES)
+   ========================================================================== */
+
+@layer components {
+  /**
+   * Manual Inversion Profile for Custom Dark Layout Containers.
+   * Maps light theme tokens to their inverse counterparts.
+   */
+  .scheme-dark {
+    --color-default: var(--color-inverse-default);
+    --color-surface: var(--color-inverse-surface);
+    --color-main: var(--color-inverse-main);
+    --color-muted: var(--color-inverse-muted);
+
+    --color-success: var(--color-inverse-success);
+    --color-warning: var(--color-inverse-warning);
+    --color-danger: var(--color-inverse-danger);
+    --color-info: var(--color-inverse-info);
+
+    --color-border-subtle: var(--color-inverse-border-subtle);
+    --color-border-main: var(--color-inverse-border-main);
+  }
+}
