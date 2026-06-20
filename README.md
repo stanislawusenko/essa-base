@@ -1,4 +1,5 @@
 # ESSA Base
+
 ![Version: 1.0.0](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
 **Professional Multi-Page HTML Starter Template** built with Vite v6, Tailwind CSS v4, Alpine.js and Handlebars.
@@ -86,9 +87,9 @@ The template includes automatic image optimization to ensure the best possible p
 
 ```html
 <picture>
-  <source srcset="/assets/img/photo.avif" type="image/avif">
-  <source srcset="/assets/img/photo.webp" type="image/webp">
-  <img src="/assets/img/photo.jpg" alt="Description" loading="lazy">
+  <source srcset="/assets/img/photo.avif" type="image/avif" />
+  <source srcset="/assets/img/photo.webp" type="image/webp" />
+  <img src="/assets/img/photo.jpg" alt="Description" loading="lazy" />
 </picture>
 ```
 
@@ -98,11 +99,11 @@ The template includes automatic image optimization to ensure the best possible p
 
 You can run these commands manually to verify your code or preview your build. Choose the tool you prefer:
 
-| Action | Bun | Node.js (npm) |
-| :--- | :--- | :--- |
-| **Format** | `bun run format` | `npm run format` |
-| **Lint** | `bun run lint` | `npm run lint` |
-| **Build** | `bun run build` | `npm run build` |
+| Action      | Bun               | Node.js (npm)     |
+| :---------- | :---------------- | :---------------- |
+| **Format**  | `bun run format`  | `npm run format`  |
+| **Lint**    | `bun run lint`    | `npm run lint`    |
+| **Build**   | `bun run build`   | `npm run build`   |
 | **Preview** | `bun run preview` | `npm run preview` |
 
 ---

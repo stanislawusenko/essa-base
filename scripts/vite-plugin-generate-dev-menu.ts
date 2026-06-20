@@ -150,9 +150,12 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
     try {
       const html = generateHtml(getHtmlFiles(srcDir))
       fs.writeFileSync(outPath, html)
-      console.log(`\x1b[32m✅ [Menu] Dashboard synchronized: ${path.basename(outPath)}\x1b[0m`)
+
+      // Оновлено префікс під єдиний стандарт ESSA Base
+      console.log(`\x1b[32m✅ [ESSA Base] Dev-menu synchronized: ${path.basename(outPath)}\x1b[0m`)
     } catch (err: any) {
-      console.error(`\x1b[31m❌ [Menu] Sync Error: ${err.message}\x1b[0m`)
+      // Оновлено префікс під єдиний стандарт ESSA Base
+      console.error(`\x1b[31m❌ [ESSA Base] Dev-menu Sync Error: ${err.message}\x1b[0m`)
     }
   }
 

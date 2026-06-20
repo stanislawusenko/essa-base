@@ -1,9 +1,11 @@
 import Alpine from 'alpinejs'
 import { registerComponents } from './alpine-components'
 
-import '@fontsource/inter/400.css'
-import '@fontsource/inter/700.css'
-import '../styles/base.css'
+import '@fontsource/manrope/400.css'
+import '@fontsource/manrope/600.css'
+import '@fontsource/manrope/700.css'
+import '@fontsource/manrope/800.css'
+import '../styles/design-tokens.css'
 // Note: wordpress.css is kept commented as a feature toggle for integration layers.
 // import '../styles/wordpress.css'
 
@@ -30,10 +32,21 @@ function startAlpine(): void {
     Alpine.start()
 
     if (import.meta.env?.DEV) {
-      console.log('ESSA Base: System initialized successfully')
+      console.log(
+        '%c✅ [ESSA Base]%c System initialized successfully',
+        'color: #10b981; font-weight: bold;',
+        'color: inherit;',
+      )
     }
   } catch (err: unknown) {
-    console.error('ESSA Base: Failed to start Alpine.js', err)
+    const errorMessage = err instanceof Error ? err.message : String(err)
+
+    console.error(
+      `%c❌ [ESSA Base]%c System Init Error: ${errorMessage}`,
+      'color: #ef4444; font-weight: bold;',
+      'color: inherit;',
+      err,
+    )
   }
 }
 
