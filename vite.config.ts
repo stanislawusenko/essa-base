@@ -82,6 +82,7 @@ export default defineConfig({
     tailwindcss(),
     handlebars({
       partialDirectory: path.resolve(__dirname, 'src/partials'),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }) as any, // Casted to prevent version mismatch warnings in strict third-party typings
     autoMainPlugin({
       scriptPath: '/scripts/main.ts',
@@ -111,6 +112,7 @@ export default defineConfig({
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         assetFileNames: (assetInfo: any) => {
           const name = assetInfo.name || ''
           const ext = path.extname(name)

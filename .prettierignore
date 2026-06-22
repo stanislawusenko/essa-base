@@ -11,9 +11,6 @@ package-lock.json
 .eslintcache
 *.tsbuildinfo
 
-src/dev-menu.html
-src/partials/
-
 src/img/
 src/public/
 *.png

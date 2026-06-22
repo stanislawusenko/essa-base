@@ -152,6 +152,7 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
       fs.writeFileSync(outPath, html)
 
       console.log(`\x1b[32m✅ [ESSA Base] Dev-menu synchronized: ${path.basename(outPath)}\x1b[0m`)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.error(`\x1b[31m❌ [ESSA Base] Dev-menu Sync Error: ${err.message}\x1b[0m`)
     }
