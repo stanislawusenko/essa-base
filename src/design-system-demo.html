@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design System Demo — ESSA Base</title>
-    <link href="/styles/base.css" rel="stylesheet" />
   </head>
   <body class="bg-default text-main py-24 font-sans antialiased">
-    <div class="mx-auto max-w-4xl space-y-16">
+    <div class="max-w-container space-y-16">
       <h1 class="text-primary mb-4 text-4xl font-bold">Design System ESSA Base v1.0</h1>
 
       <section>
@@ -146,13 +145,33 @@
       <section class="flex flex-col gap-8">
         <h2 class="text-primary mt-8 text-3xl font-bold">Layout & Geometry</h2>
 
-        <div class="border-border-main border border-dashed p-4">
-          <h3 class="text-main mb-2 font-bold">Container (max-width: 80rem)</h3>
-          <div class="bg-surface text-muted rounded-md p-4 text-sm italic">
-            Content width constraint.
+        <!-- Container Demo -->
+        <div class="space-y-4">
+          <h3 class="text-main font-bold">Container (max-w-container)</h3>
+
+          <!-- Outer boundary simulating the browser viewport -->
+          <div class="border-border-main rounded-lg border border-dashed p-4">
+            <!-- Real-world usage of the custom utility class -->
+            <div class="max-w-container bg-surface text-muted rounded-md p-4 text-center italic">
+              This block is automatically constrained to 90rem, centered, and applies safe
+              horizontal padding.
+            </div>
           </div>
+
+          <p class="text-muted text-sm">
+            The
+            <code>max-w-container</code>
+            utility combines
+            <code>max-width: 90rem</code>
+            ,
+            <code>margin-inline: auto</code>
+            , and
+            <code>padding-inline: var(--container-px)</code>
+            .
+          </p>
         </div>
 
+        <!-- Corner Radius -->
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div class="space-y-4">
             <h3 class="text-main font-bold">Corner Radius</h3>

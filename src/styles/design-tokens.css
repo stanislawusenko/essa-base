@@ -86,9 +86,15 @@
   --spacing-edge: clamp(1rem, 5vw, 2rem);
   --spacing-gutter: 1.5rem;
 
+  /* Page Layout Standards (Figma Reference) */
+  --spacing-page-y: 6.25rem;
+  --spacing-page-x: 5rem;
+  --spacing-page-gap: 6.25rem;
+
   /* Layout Width Limits */
-  --container-max-width: 80rem;
-  --container-padding: 1rem;
+  --max-w-container: 90rem;
+  --container-px: clamp(1rem, 5vw, 5rem);
+  --container-py: var(--spacing-page-y);
   --max-width-content: 65ch;
   --max-width-copy: 45ch;
 
@@ -111,6 +117,18 @@
   --transition-duration-normal: 300ms;
   --transition-duration-slow: 500ms;
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*
+  Defines a custom responsive container utility.
+  Uses the --max-w-container theme variable for consistent layout constraints
+  and enforces horizontal centering.
+*/
+@utility max-w-container {
+  max-width: var(--max-w-container);
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: var(--container-px);
 }
 
 /* ==========================================================================
