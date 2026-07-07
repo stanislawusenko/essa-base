@@ -125,8 +125,10 @@ src/
 │   └── main.ts               # Main JavaScript entry point
 │
 ├── styles/
-│   ├── base.css              # Tailwind CSS core setup & theme configuration
-│   └── wordpress.css         # WordPress-specific styles (admin bar, integrations)
+│   ├── design-tokens.css      # Core theme configuration, variables, and design tokens
+│   ├── core-components.css    # Global resets, base element styles, and core UI layer
+│   ├── project-components.css # Page-specific components, custom utilities, and overrides
+│   └── wordpress.css          # WordPress-specific styles (admin bar, integration)
 │
 ├── types/                    # TypeScript global definitions
 │   └── alpine.d.ts           # Alpine.js global type declarations
