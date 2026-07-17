@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /**
  * @file design-tokens.css
@@ -15,6 +15,7 @@
   /* 1. BRAND & UI COLOR PALETTE */
   /* Brand Identity */
   --color-primary: #001f3f;
+  --color-primary-hover: #002d5a;
   --color-secondary: #334155;
   --color-accent: #f68d1e;
   --color-highlight: #fef08a;
@@ -52,7 +53,7 @@
   --color-inverse-border-main: #3b7dbd;
 
   /* 2. TYPOGRAPHY SYSTEM */
-  --font-sans: 'Manrope', 'ui-sans-serif', 'system-ui', sans-serif;
+  --font-sans: "Manrope", "ui-sans-serif", "system-ui", sans-serif;
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -82,17 +83,17 @@
 
   /* 3. LAYOUT & SPACING CONSTRAINTS */
   /* Fluid Spacing Scale */
-  --spacing-section: clamp(4rem, 10vw, 8rem);
-  --spacing-edge: clamp(1rem, 5vw, 2rem);
-  --spacing-gutter: 1.5rem;
+  --spacing-section: clamp(4rem, 8vw, 8rem);
+  --spacing-edge: clamp(1rem, 2vw, 2rem);
+  --spacing-gutter: clamp(1rem, 2vw, 2rem);
 
-  /* Page Layout Standards (Figma Reference) */
-  --spacing-page-y: 6.25rem;
-  --spacing-page-x: 5rem;
-  --spacing-page-gap: 6.25rem;
+  /* Page Layout Standards */
+  --spacing-page-y: clamp(3rem, 6vw, 6.25rem);
+  --spacing-page-x: clamp(2rem, 5vw, 5rem);
+  --spacing-page-gap: clamp(3rem, 6vw, 6.25rem);
 
   /* Layout Width Limits */
-  --max-w-container: 90rem;
+  --max-w-container: 80rem;
   --container-px: clamp(1rem, 5vw, 5rem);
   --container-py: var(--spacing-page-y);
   --max-width-content: 65ch;
@@ -109,26 +110,39 @@
   /* 5. ELEVATION SHADOWS */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* 6. MOTION & TIMINGS */
   --transition-duration-fast: 150ms;
   --transition-duration-normal: 300ms;
   --transition-duration-slow: 500ms;
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-default: var(--transition-duration-normal) var(--ease-default);
 }
 
 /*
-  Defines a custom responsive container utility.
-  Uses the --max-w-container theme variable for consistent layout constraints
-  and enforces horizontal centering.
+   Fluid container utility for layout consistency.
+   Ensures inner content adheres to '--max-w-container' width.
 */
 @utility max-w-container {
-  max-width: var(--max-w-container);
-  margin-inline: auto;
+  /* Compensate padding to preserve fixed content width */
+  max-width: calc(var(--max-w-container) + (var(--container-px) * 2));
+
   width: 100%;
+  margin-inline: auto;
   padding-inline: var(--container-px);
+  box-sizing: border-box;
+}
+
+/*
+   Standardized grid gap based on project design tokens.
+   Ensures consistent vertical and horizontal rhythm.
+*/
+@utility gap-layout {
+  gap: var(--spacing-page-gap);
 }
 
 /* ==========================================================================

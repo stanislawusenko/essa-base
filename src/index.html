@@ -5,101 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home — ESSA Base</title>
   </head>
-  <body
-    class="bg-default text-main grid min-h-screen grid-rows-[auto_1fr_auto] font-sans antialiased"
-  >
-    {{> header }}
 
-    <main>
-      <section class="from-default to-surface bg-linear-to-b px-6 py-20">
-        <div class="mx-auto max-w-4xl text-center">
-          <h1 class="text-primary mb-5 text-5xl font-extrabold tracking-tight drop-shadow-md">
-            Build with Quality, Start with Speed
-          </h1>
-          <p class="text-muted mx-auto mb-10 max-w-xl text-xl leading-relaxed">
-            A refined multi-page boilerplate engineered for rapid development and clean
-            architecture.
-          </p>
+  <body>
+    <!-- Main layout wrapper providing sticky footer and structural constraints -->
+    <div class="grid min-h-screen grid-rows-[auto_1fr_auto]">
+      {{> header }}
 
-          <div class="flex items-end justify-center gap-8 sm:gap-12">
-            <a
-              href="https://vitejs.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center gap-3 select-none"
-            >
-              <div class="flex h-12 items-center justify-center">
-                <img
-                  src="https://vitejs.dev/logo.svg"
-                  alt="Vite"
-                  class="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <span
-                class="text-muted group-hover:text-primary text-xs font-bold tracking-wider uppercase transition-colors"
+      <main>
+        <!-- Section: Hero - Uses dynamic spacing tokens for consistent vertical rhythm -->
+        <section class="from-default to-surface bg-linear-to-b py-[var(--spacing-section)]">
+          <!-- Container: Constrained width and centered alignment -->
+          <div class="max-w-container mx-auto text-center">
+            <h1 class="text-primary text-h1 mb-5 font-bold tracking-tight drop-shadow-md">
+              Build with Quality, Start with Speed
+            </h1>
+            <p class="text-muted max-w-copy mx-auto mb-10 text-lg leading-relaxed">
+              A refined multi-page boilerplate engineered for rapid development and clean
+              architecture.
+            </p>
+
+            <!-- Grid: Integrated spacing via gap-layout utility -->
+            <div class="gap-layout grid justify-center sm:grid-cols-3">
+              <a
+                href="https://vite.dev/"
+                class="group flex flex-col items-center gap-3 select-none"
               >
-                Vite 6
-              </span>
-            </a>
+                <div class="flex h-12 items-center justify-center">
+                  <img
+                    src="https://vitejs.dev/logo.svg"
+                    alt="Vite"
+                    class="duration-normal h-12 w-12 transition-transform group-hover:scale-110"
+                  />
+                </div>
+                <span
+                  class="text-muted group-hover:text-primary text-xs font-bold tracking-wider uppercase transition-colors"
+                >
+                  Vite 6
+                </span>
+              </a>
 
-            <a
-              href="https://tailwindcss.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center gap-3 select-none"
-            >
-              <div class="flex h-12 items-center justify-center">
-                <img
-                  src="https://tailwindcss.com/favicons/favicon-32x32.png?v=3"
-                  alt="Tailwind"
-                  class="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <span
-                class="text-muted group-hover:text-primary text-xs font-bold tracking-wider uppercase transition-colors"
+              <a
+                href="https://tailwindcss.com/"
+                class="group flex flex-col items-center gap-3 select-none"
               >
-                Tailwind 4
-              </span>
-            </a>
+                <div class="flex h-12 items-center justify-center">
+                  <img
+                    src="https://tailwindcss.com/favicons/favicon-32x32.png"
+                    alt="Tailwind"
+                    class="duration-normal h-10 w-10 transition-transform group-hover:scale-110"
+                  />
+                </div>
+                <span
+                  class="text-muted group-hover:text-primary text-xs font-bold tracking-wider uppercase transition-colors"
+                >
+                  Tailwind 4
+                </span>
+              </a>
 
-            <a
-              href="https://alpinejs.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex flex-col items-center gap-3 select-none"
-            >
-              <div class="flex h-12 items-center justify-center">
-                <img
-                  src="https://alpinejs.dev/favicon.png"
-                  alt="AlpineJS"
-                  class="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <span
-                class="text-muted group-hover:text-primary text-xs font-bold tracking-wider uppercase transition-colors"
+              <a
+                href="https://alpinejs.dev/"
+                class="group flex flex-col items-center gap-3 select-none"
               >
-                Alpine.js
-              </span>
-            </a>
+                <div class="flex h-12 items-center justify-center">
+                  <img
+                    src="https://alpinejs.dev/favicon.png"
+                    alt="AlpineJS"
+                    class="duration-normal h-10 w-10 transition-transform group-hover:scale-110"
+                  />
+                </div>
+                <span
+                  class="text-muted group-hover:text-primary text-xs font-bold tracking-wider uppercase transition-colors"
+                >
+                  Alpine.js
+                </span>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="px-8 py-14">
-        <div class="prose mx-auto max-w-6xl">
-          <h2
-            class="text-primary border-accent mb-6 inline-block border-b-2 pb-2 text-3xl font-semibold select-none"
-          >
-            Core Features
-          </h2>
-          <p class="text-muted leading-relaxed">
-            A production-ready foundation featuring a sticky layout, responsive navigation and
-            Alpine.js interactivity — designed to be completely customizable.
-          </p>
-        </div>
-      </section>
-    </main>
+        <!-- Section: Features - Standardized section padding and content width -->
+        <section class="py-[var(--spacing-section)]">
+          <div class="max-w-container mx-auto">
+            <div class="prose max-w-content">
+              <h2
+                class="text-primary border-accent text-h2 mb-6 inline-block border-b-2 pb-2 font-semibold select-none"
+              >
+                Core Features
+              </h2>
+              <p class="text-muted leading-relaxed">
+                A production-ready foundation featuring a sticky layout, responsive navigation and
+                Alpine.js interactivity — designed to be completely customizable.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    {{> footer }}
+      {{> footer }}
+    </div>
   </body>
 </html>

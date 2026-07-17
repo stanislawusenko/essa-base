@@ -1,4 +1,4 @@
-@import './design-tokens.css';
+@reference './design-tokens.css';
 
 /**
  * @file core-components.css
@@ -23,6 +23,7 @@
 
   a {
     @apply duration-normal ease-default transition-colors;
+    @apply focus-visible:ring-accent ring-offset-2 outline-none focus-visible:ring-2;
   }
 }
 
