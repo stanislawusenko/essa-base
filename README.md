@@ -19,7 +19,7 @@ This template provides a clean, professional foundation for rapid multi-page dev
 - **Fonts:** Pre-configured via `@fontsource` for optimal loading.
 - **Auto-generated Menu:** `dev-menu.html` stays updated with all your HTML pages automatically.
 - **Auto Image Optimization:** Built-in automatic conversion of images to WebP and AVIF formats during production build using `vite-plugin-image-optimizer`.
-- **Backend Agnostic:** Ships as plain HTML/CSS ready to be handed off to any backend (WordPress, Laravel, etc.). Includes an optional wordpress.css for WP admin-bar integration — import it in `main.ts` only for projects targeting WordPress.
+- **Backend Agnostic:** Ships as plain, static HTML/CSS with no backend-specific markup or hooks baked in.
 - **Professional Tooling**: Pre-configured ESLint (Flat Config), Prettier, and EditorConfig.
 
 ---
@@ -127,8 +127,7 @@ src/
 ├── styles/
 │   ├── design-tokens.css      # Core theme configuration, variables, and design tokens
 │   ├── core-components.css    # Global resets, base element styles, and core UI layer
-│   ├── project-components.css # Page-specific components, custom utilities, and overrides
-│   └── wordpress.css          # WordPress-specific styles (admin bar, integration)
+│   └── project-components.css # Page-specific components, custom utilities, and overrides
 │
 ├── types/                    # TypeScript global definitions
 │   └── alpine.d.ts           # Alpine.js global type declarations

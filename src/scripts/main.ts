@@ -10,7 +10,6 @@ import '@fontsource/manrope/800.css'
 import '../styles/design-tokens.css' // 1. Global design tokens & theme configurations
 import '../styles/core-components.css' // 2. Core element resets & system components
 import '../styles/project-components.css' // 3. Custom layout components & custom vanilla CSS
-// import '../styles/wordpress.css' // 4. WordPress admin-bar integration (no-op outside WP: rules are scoped to body.admin-bar / #wpadminbar)
 
 /**
  * @file main.ts
