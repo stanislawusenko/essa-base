@@ -63,5 +63,5 @@ export default tseslint.config(
       // Allow console
       'no-console': 'off',
     },
-  }
+  },
 )
