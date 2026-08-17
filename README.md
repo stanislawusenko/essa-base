@@ -19,7 +19,7 @@ This template provides a clean, professional foundation for rapid multi-page dev
 - **Fonts:** Pre-configured via `@fontsource` for optimal loading.
 - **Auto-generated Menu:** `dev-menu.html` stays updated with all your HTML pages automatically.
 - **Auto Image Optimization:** Built-in automatic conversion of images to WebP and AVIF formats during production build using `vite-plugin-image-optimizer`.
-- **WordPress Ready:** Includes wordpress.css for seamless integration with CMS admin bars and core styles (easily toggled in main.ts).
+- **WordPress Ready:** Includes wordpress.css, always active and scoped to `body.admin-bar`/`#wpadminbar`, so it's a no-op until the markup runs inside WordPress.
 - **Professional Tooling**: Pre-configured ESLint (Flat Config), Prettier, and EditorConfig.
 
 ---
