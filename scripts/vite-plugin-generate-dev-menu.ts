@@ -49,7 +49,7 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
 
   const formatDate = (mtime: Date): string => mtime.toISOString().replace('T', ' ').slice(0, 16)
 
-  const getHtmlFiles = (dir: string, relativePath = ''): MenuNode[] => {
+  const getHtmlFiles = (dir: string, excludeDemo: boolean, relativePath = ''): MenuNode[] => {
     const results: MenuNode[] = []
     if (!fs.existsSync(dir)) return results
 
@@ -69,12 +69,13 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
 
     for (const item of items) {
       if (item.name.startsWith('.') || item.name === 'dev-menu.html') continue
+      if (excludeDemo && item.name.includes('-demo')) continue
 
       const fullPath = path.join(dir, item.name)
       const rel = path.join(relativePath, item.name).replace(/\\/g, '/')
 
       if (item.isDirectory() && !ignoredDirs.includes(item.name)) {
-        const children = getHtmlFiles(fullPath, rel)
+        const children = getHtmlFiles(fullPath, excludeDemo, rel)
         if (children.length) results.push({ name: item.name, type: 'dir', children })
       } else if (item.isFile() && path.extname(item.name) === '.html') {
         results.push({ name: item.name, type: 'file', path: rel })
@@ -146,9 +147,9 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
 </html>`
   }
 
-  const generateMenu = (outPath: string) => {
+  const generateMenu = (outPath: string, excludeDemo: boolean) => {
     try {
-      const html = generateHtml(getHtmlFiles(srcDir))
+      const html = generateHtml(getHtmlFiles(srcDir, excludeDemo))
       fs.writeFileSync(outPath, html)
 
       console.log(`\x1b[32m✅ [ESSA Base] Dev-menu synchronized: ${path.basename(outPath)}\x1b[0m`)
@@ -164,7 +165,7 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
 
   return {
     name: 'vite-plugin-generate-dev-menu',
-    buildStart: () => generateMenu(devOutFile),
+    buildStart: () => generateMenu(devOutFile, false),
 
     configureServer(server: ViteDevServer) {
       server.watcher.on('all', (_event, file) => {
@@ -174,14 +175,16 @@ export default function generateMenuPlugin(options: MenuOptions = {}): Plugin {
           !file.includes('partials')
         ) {
           clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => generateMenu(devOutFile), 300)
+          debounceTimer = setTimeout(() => generateMenu(devOutFile, false), 300)
         }
       })
     },
 
     closeBundle: () => {
       const distDir = path.resolve(process.cwd(), 'dist')
-      if (fs.existsSync(distDir)) generateMenu(path.join(distDir, 'dev-menu.html'))
+      // Demo/design-system pages are excluded from the production build (see vite.config.ts),
+      // so the client-facing menu must not link to them either.
+      if (fs.existsSync(distDir)) generateMenu(path.join(distDir, 'dev-menu.html'), true)
     },
   }
 }
