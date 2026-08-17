@@ -17,7 +17,8 @@ src/dev-menu.html
 .env.*
 !.env.example
 
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .idea/
 *.suo
 *.ntvs*

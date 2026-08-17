@@ -1,2 +1,5 @@
+# This file ships to dist/ as-is. "Disallow: /" here would silently block
+# search engines on every project launched from this starter — set it only
+# on staging/preview deployments, not in the production default.
 User-agent: *
-Disallow: /
+Allow: /
